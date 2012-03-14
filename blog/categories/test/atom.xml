@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Nihonhut]]></title>
-  <link href="http://sulvaat.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Test | Nihonhut]]></title>
+  <link href="http://sulvaat.github.com/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://sulvaat.github.com/"/>
   <updated>2012-03-13T23:18:17-04:00</updated>
   <id>http://sulvaat.github.com/</id>
@@ -19,17 +19,6 @@
     <updated>2012-03-13T23:17:00-04:00</updated>
     <id>http://sulvaat.github.com/blog/2012/03/13/testing2</id>
     <content type="html"><![CDATA[<p>No Line Breaking</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[testing]]></title>
-    <link href="http://sulvaat.github.com/blog/2012/03/13/testing/"/>
-    <updated>2012-03-13T23:16:00-04:00</updated>
-    <id>http://sulvaat.github.com/blog/2012/03/13/testing</id>
-    <content type="html"><![CDATA[<p>This is a test</p>
-
-<p>line break test</p>
 ]]></content>
   </entry>
   

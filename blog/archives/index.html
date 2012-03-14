@@ -9,8 +9,9 @@
   <meta name="author" content="sul">
 
   
-  <meta name="description" content="Blog Archive 2012 Fixing Ye Old&#8217; Laptop
-Mar 13 2012 posted in Archlinux, Laptop, Meh Recent Posts Fixing Ye Old' Laptop Latest Tweets Status &hellip;">
+  <meta name="description" content="Blog Archive 2012 testing2
+Mar 13 2012 posted in Test testing
+Mar 13 2012 posted in test Recent Posts testing2 testing GitHub Repos Status updating &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,11 +81,25 @@ Mar 13 2012 posted in Archlinux, Laptop, Meh Recent Posts Fixing Ye Old' Laptop 
 
 <article>
   
-<h1><a href="/blog/2012/03/13/fun-with-archlinux/">Fixing Ye Old&#8217; Laptop</a></h1>
-<time datetime="2012-03-13T21:40:00-04:00" pubdate><span class='month'>Mar</span> <span class='day'>13</span> <span class='year'>2012</span></time>
+<h1><a href="/blog/2012/03/13/testing2/">testing2</a></h1>
+<time datetime="2012-03-13T23:17:00-04:00" pubdate><span class='month'>Mar</span> <span class='day'>13</span> <span class='year'>2012</span></time>
 
 <footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/archlinux/'>Archlinux</a>, <a class='category' href='/blog/categories/laptop/'>Laptop</a>, <a class='category' href='/blog/categories/meh/'>Meh</a></span>
+  <span class="categories">posted in <a class='category' href='/blog/categories/test/'>Test</a></span>
+</footer>
+
+
+</article>
+
+
+
+<article>
+  
+<h1><a href="/blog/2012/03/13/testing/">testing</a></h1>
+<time datetime="2012-03-13T23:16:00-04:00" pubdate><span class='month'>Mar</span> <span class='day'>13</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/test/'>test</a></span>
 </footer>
 
 
@@ -104,10 +119,43 @@ Mar 13 2012 posted in Archlinux, Laptop, Meh Recent Posts Fixing Ye Old' Laptop 
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/03/13/fun-with-archlinux/">Fixing Ye Old' Laptop</a>
+        <a href="/blog/2012/03/13/testing2/">testing2</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/03/13/testing/">testing</a>
       </li>
     
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/sulvaat">@sulvaat</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'sulvaat',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
