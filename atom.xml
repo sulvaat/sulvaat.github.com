@@ -4,7 +4,7 @@
   <title><![CDATA[Nihonhut]]></title>
   <link href="http://sulvaat.github.com/atom.xml" rel="self"/>
   <link href="http://sulvaat.github.com/"/>
-  <updated>2012-03-13T23:57:36-04:00</updated>
+  <updated>2012-03-14T13:32:12-04:00</updated>
   <id>http://sulvaat.github.com/</id>
   <author>
     <name><![CDATA[sul]]></name>
@@ -12,6 +12,134 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Speed Up Your Life With dwm]]></title>
+    <link href="http://sulvaat.github.com/blog/2012/03/14/speed-up-your-life-with-dwm/"/>
+    <updated>2012-03-14T11:57:00-04:00</updated>
+    <id>http://sulvaat.github.com/blog/2012/03/14/speed-up-your-life-with-dwm</id>
+    <content type="html"><![CDATA[<p>Good X window managers make life good. Unless you&#8217;re into bloated desktop enviroments a simple X window manager is plenty sufficiant. Here is how to setup a slightly less basic dwm. This is mostly taken from the <a href="https://wiki.archlinux.org/index.php/Dwm#Customizing_config.h">ArchWiki</a> with a few added comments. Some steps have been simplified but helper applications like conky and dmenu have been split up.</p>
+
+<p>First get what we need to install dwm:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># pacman -S abs dmenu</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you diddn&#8217;t already have base-devel selected at install, add it now.</p>
+
+<p>Now copy the scipts from the dwm community:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># abs community/dwm
+</span><span class='line'>$ cp -r /var/abs/community/dwm ~/dwm && cd ~/dwm</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now that we have a bare copy of dwm in our user directory, lets configure. dwm is mainly configured through its <code>config.h</code> file.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/* appearance */
+</span><span class='line'>static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
+</span><span class='line'>static const char normbordercolor[] = "#444444";
+</span><span class='line'>static const char normbgcolor[]     = "#333333";
+</span><span class='line'>static const char normfgcolor[]     = "#bbbbbb";
+</span><span class='line'>static const char selbordercolor[]  = "#005577";
+</span><span class='line'>static const char selbgcolor[]      = "#333333";
+</span><span class='line'>static const char selfgcolor[]      = "#3300ff";
+</span><span class='line'>static const unsigned int borderpx  = 1;        /* border pixel of windows */
+</span><span class='line'>static const unsigned int snap      = 32;       /* snap pixel */
+</span><span class='line'>static const Bool showbar           = True;     /* False means no bar */
+</span><span class='line'>static const Bool topbar            = True;     /* False means bottom bar */</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Most of it is self explanitory here</p>
+
+<p>For:</p>
+
+<ul>
+<li><code>normbgcolor[]</code> I like dark since it is easy to contrast with&#8230;but not black so #333333
+<li><code>normfgcolor[]</code> I picked a nice shade of blue from a list of web colors (easy to google for) #bbbbbb
+<li> also not that I made <code>selbgcolor[]</code> and <code>selfgcolor[]</code> go with the same dark theme.
+</ul>
+
+
+<p>Now lets set a good terminal emulator. I like urxvt just because it was the easiest to make look pretty.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># pacman -S rxvt-unicode</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now lets set dwm to use it when e press <code>alt+shift+enter</code></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/* commands */
+</span><span class='line'>static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+</span><span class='line'>static const char *termcmd[]  = { "urxvt", NULL };</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For the most part you just need to change the line above with urxvt, the rest tells dwm about how to theme dmenu, same as above.</p>
+
+<p>Now lets install (whew!)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ makepkg -g &gt;&gt; PKGBUILD
+</span><span class='line'>$ makepkg -efi --skipinteg</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now lets get conky and set it up for our status bar!</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># pacman -S conky</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Conky needs to have it&#8217;s output sent to the status bar <code>xsetroot -name</code>. Add this to your <code>~/.xinitrc</code></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>conky | while read -r; do xsetroot -name "$REPLY"; done &
+</span><span class='line'>exec dwm</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Save and close that, then open up your conkyrc or <code>/etc/conky/conky.conf</code>. Below is a snipt from mine which is set up for a dual core cpu and wlan0 as the network to display stats from.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>out_to_console yes
+</span><span class='line'>out_to_x no
+</span><span class='line'>background no
+</span><span class='line'>update_interval 2
+</span><span class='line'>total_run_times 0
+</span><span class='line'>use_spacer none
+</span><span class='line'>
+</span><span class='line'>TEXT
+</span><span class='line'>${cpu cpu1}% | ${cpu cpu2}% :: ${acpitemp}c :: ${downspeed wlan0}D | ${upspeed wlan0}U :: ${time %a %b %d %I:%M%P}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We are finally finished! Enjoy you&#8217;re new dwm desktop. I will make another post shortly with the kep combinations and other ways that I have found to speed up workflow.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Easily Switch To USB Audio Output in Arch]]></title>

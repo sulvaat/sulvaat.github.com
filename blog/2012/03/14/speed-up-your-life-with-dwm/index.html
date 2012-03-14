@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Nihonhut</title>
+  <title>Speed Up Your Life With dwm - Nihonhut</title>
   <meta name="author" content="sul">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sulvaat.github.com">
+  <link rel="canonical" href="http://sulvaat.github.com/blog/2012/03/14/speed-up-your-life-with-dwm">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -62,15 +62,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/03/14/speed-up-your-life-with-dwm/">Speed Up Your Life With Dwm</a></h1>
+      <h1 class="entry-title">Speed Up Your Life With Dwm</h1>
     
     
       <p class="meta">
@@ -93,7 +90,7 @@
   </header>
 
 
-  <div class="entry-content"><p>Good X window managers make life good. Unless you&#8217;re into bloated desktop enviroments a simple X window manager is plenty sufficiant. Here is how to setup a slightly less basic dwm. This is mostly taken from the <a href="https://wiki.archlinux.org/index.php/Dwm#Customizing_config.h">ArchWiki</a> with a few added comments. Some steps have been simplified but helper applications like conky and dmenu have been split up.</p>
+<div class="entry-content"><p>Good X window managers make life good. Unless you&#8217;re into bloated desktop enviroments a simple X window manager is plenty sufficiant. Here is how to setup a slightly less basic dwm. This is mostly taken from the <a href="https://wiki.archlinux.org/index.php/Dwm#Customizing_config.h">ArchWiki</a> with a few added comments. Some steps have been simplified but helper applications like conky and dmenu have been split up.</p>
 
 <p>First get what we need to install dwm:</p>
 
@@ -214,108 +211,16 @@
 
 <p>We are finally finished! Enjoy you&#8217;re new dwm desktop. I will make another post shortly with the kep combinations and other ways that I have found to speed up workflow.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/13/easily-switch-audio-outputs-in-arch/">Easily Switch to USB Audio Output in Arch</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">sul</span></span>
 
-<time datetime="2012-03-13T23:36:00-04:00" pubdate data-updated="true">Mar 13<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Lets face it, switching audio outputs is a pain on linux. I made a quick script that you can place in /bin to make life easier.</p>
-
-<p>You will need to get asoundconf out of the AUR first, once thats ready to go:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ asoundconf is-active
-</span><span class='line'>$ asoundconf list</span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sanae@MORIYA&gt; asoundconf list
-</span><span class='line'>Names of available soundcards:
-</span><span class='line'>Intel 
-</span><span class='line'>CODEC // This is my USB DAC</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This will print all the cards in your system. Remember them since you will make a script for each one now:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/sh
-</span><span class='line'>
-</span><span class='line'>asoundconf is-active
-</span><span class='line'>asoundconf list
-</span><span class='line'>asoundconf set-default-card Intel</span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/sh
-</span><span class='line'>
-</span><span class='line'>asoundconf is-active
-</span><span class='line'>asoundconf list
-</span><span class='line'>asoundconf set-default-card CODEC</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Simple.</p>
-
-<p>Now, move them to /bin so all you need to do is type intel or codec (in this case) to switch.</p>
-
-<p>Enjoy.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/13/laptop-woes/">Laptop Woes</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -327,37 +232,40 @@
   
 
 
-<time datetime="2012-03-13T23:22:00-04:00" pubdate data-updated="true">Mar 13<span>th</span>, 2012</time>
-        
-      </p>
+<time datetime="2012-03-14T11:57:00-04:00" pubdate data-updated="true">Mar 14<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/arch/'>Arch</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/dwm/'>dwm</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>My laptop decided to kick the bucket last week. The HDD kept making clicks of death, screen flickered whenever the lid moved. Since I can&#8217;t afford to buy a new one and I was starting to miss it
-just hours after it had died, it was time to put on the operating gloves and open this baby up!</p>
-
-<p>First thing that needed to be done was a new HDD, I had a spare 250gb drive that fit in nicely. Done. Next was the screen. I peeled off the sticky silicone stoppers around the bezel which revealed
-four small screws. As I went about unscrewing them, I found that the top left one had been pre-striped from Chine&#8230;. awesome. After wrestling around with it some more I finally got it; amazing what a
-small dab of hairspray can do! The flickering was caused by a few shorts from exposed wire on the ribbon cable. With a soldering iron and a toothbrush, I melted a few of the bristles to seal off the
-exposed parts. It smelled like toddler poop for a bit afterwards. Anyway, hit the power and away she went, gave the screen a few swings and all was fine. Yippee!</p>
-
-<p>Now comes the fun part! Since the old HDD was now toast, I had to reinstall the OS on the new drive. Being a tech savvy person, Linux was the obviouse choice. I opted for Archlinux over the
-popular debian flavors. I have been working with Arch for the past six months or so and have really come to appreciate it&#8217;s methodologies and it&#8217;s wonderful community. At first, Arch can seem pretty
-daunting because there is no default GUI with a pretty setup application. As a fan of BSD, this was not a problem. Just followed the Arch Beginners Guide. All is now well with my laptop!</p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sulvaat.github.com/blog/2012/03/14/speed-up-your-life-with-dwm/" data-via="yaki_tako" data-counturl="http://sulvaat.github.com/blog/2012/03/14/speed-up-your-life-with-dwm/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/03/13/easily-switch-audio-outputs-in-arch/" title="Previous Post: Easily Switch To USB Audio Output in Arch">&laquo; Easily Switch To USB Audio Output in Arch</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -382,7 +290,7 @@ daunting because there is no default GUI with a pretty setup application. As a f
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/sulvaat">@sulvaat</a> on GitHub
@@ -412,7 +320,7 @@ daunting because there is no default GUI with a pretty setup application. As a f
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -431,6 +339,7 @@ daunting because there is no default GUI with a pretty setup application. As a f
 
   
 </aside>
+
 
     </div>
   </div>
