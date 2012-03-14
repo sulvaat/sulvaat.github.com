@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://sulvaat.github.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+title: Nihonhut
+subtitle: You know what you did.
+author: sul
 simple_search: http://google.com/search
-description:
+description: PoooOOOoooOOOoooP
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -64,7 +64,7 @@ github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: yaki_tako
 twitter_tweet_count: 4
 twitter_show_replies: false
 twitter_follow_button: true
@@ -96,4 +96,4 @@ disqus_show_comment_count: false
 google_analytics_tracking_id:
 
 # Facebook Like
-facebook_like: false
+facebook_like: true
