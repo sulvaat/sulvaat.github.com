@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Nihonhut]]></title>
-  <link href="http://sulvaat.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Laptop | Nihonhut]]></title>
+  <link href="http://sulvaat.github.com/blog/categories/laptop/atom.xml" rel="self"/>
   <link href="http://sulvaat.github.com/"/>
   <updated>2012-03-13T22:13:22-04:00</updated>
   <id>http://sulvaat.github.com/</id>
