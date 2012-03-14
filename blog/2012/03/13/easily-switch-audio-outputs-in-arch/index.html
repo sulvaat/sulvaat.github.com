@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Laptop - Nihonhut</title>
+  <title>Easily Switch To USB Audio Output in Arch - Nihonhut</title>
   <meta name="author" content="sul">
 
   
-  <meta name="description" content="Category: Laptop">
+  <meta name="description" content="Lets face it, switching audio outputs is a pain on linux. I made a quick script that you can place in /bin to make life easier. You will need to get &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sulvaat.github.comblog/categories/laptop">
+  <link rel="canonical" href="http://sulvaat.github.com/blog/2012/03/13/easily-switch-audio-outputs-in-arch">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,35 +63,136 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Laptop</h1>
+    
+      <h1 class="entry-title">Easily Switch to USB Audio Output in Arch</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-13T23:36:00-04:00" pubdate data-updated="true">Mar 13<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Lets face it, switching audio outputs is a pain on linux. I made a quick script that you can place in /bin to make life easier.</p>
 
-  
-  <h2>2012</h2>
+<p>You will need to get asoundconf out of the AUR first, once thats ready to go:</p>
 
-<article>
-  
-<h1><a href="/blog/2012/03/13/laptop-woes/">Laptop Woes</a></h1>
-<time datetime="2012-03-13T23:22:00-04:00" pubdate><span class='month'>Mar</span> <span class='day'>13</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/laptop/'>Laptop</a></span>
-</footer>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ asoundconf is-active
+</span><span class='line'>$ asoundconf list</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sanae@MORIYA&gt; asoundconf list
+</span><span class='line'>Names of available soundcards:
+</span><span class='line'>Intel 
+</span><span class='line'>CODEC // This is my USB DAC</span></code></pre></td></tr></table></div></figure>
 
+
+<p>This will print all the cards in your system. Remember them since you will make a script for each one now:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/sh
+</span><span class='line'>
+</span><span class='line'>asoundconf is-active
+</span><span class='line'>asoundconf list
+</span><span class='line'>asoundconf set-default-card Intel</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/sh
+</span><span class='line'>
+</span><span class='line'>asoundconf is-active
+</span><span class='line'>asoundconf list
+</span><span class='line'>asoundconf set-default-card CODEC</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Simple.</p>
+
+<p>Now, move them to /bin so all you need to do is type intel or codec (in this case) to switch.</p>
+
+<p>Enjoy.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">sul</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-13T23:36:00-04:00" pubdate data-updated="true">Mar 13<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/arch/'>Arch</a>, <a class='category' href='/blog/categories/audio/'>Audio</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sulvaat.github.com/blog/2012/03/13/easily-switch-audio-outputs-in-arch/" data-via="yaki_tako" data-counturl="http://sulvaat.github.com/blog/2012/03/13/easily-switch-audio-outputs-in-arch/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/03/13/laptop-woes/" title="Previous Post: Laptop Woes">&laquo; Laptop Woes</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

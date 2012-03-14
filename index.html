@@ -9,7 +9,7 @@
   <meta name="author" content="sul">
 
   
-  <meta name="description" content="My laptop decided to kick the bucket last week. The HDD kept making clicks of death, screen flickered whenever the lid moved. Since I can&#8217;t &hellip;">
+  <meta name="description" content="Lets face it, switching audio outputs is a pain on linux. I made a quick script that you can place in /bin to make life easier. You will need to get &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,6 +70,92 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/03/13/easily-switch-audio-outputs-in-arch/">Easily Switch to USB Audio Output in Arch</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-13T23:36:00-04:00" pubdate data-updated="true">Mar 13<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Lets face it, switching audio outputs is a pain on linux. I made a quick script that you can place in /bin to make life easier.</p>
+
+<p>You will need to get asoundconf out of the AUR first, once thats ready to go:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ asoundconf is-active
+</span><span class='line'>$ asoundconf list</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sanae@MORIYA&gt; asoundconf list
+</span><span class='line'>Names of available soundcards:
+</span><span class='line'>Intel 
+</span><span class='line'>CODEC // This is my USB DAC</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will print all the cards in your system. Remember them since you will make a script for each one now:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/sh
+</span><span class='line'>
+</span><span class='line'>asoundconf is-active
+</span><span class='line'>asoundconf list
+</span><span class='line'>asoundconf set-default-card Intel</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/sh
+</span><span class='line'>
+</span><span class='line'>asoundconf is-active
+</span><span class='line'>asoundconf list
+</span><span class='line'>asoundconf set-default-card CODEC</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Simple.</p>
+
+<p>Now, move them to /bin so all you need to do is type intel or codec (in this case) to switch.</p>
+
+<p>Enjoy.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/03/13/laptop-woes/">Laptop Woes</a></h1>
     
     
@@ -122,6 +208,10 @@ daunting because there is no default GUI with a pretty setup application. As a f
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/03/13/easily-switch-audio-outputs-in-arch/">Easily Switch To USB Audio Output in Arch</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/03/13/laptop-woes/">Laptop Woes</a>

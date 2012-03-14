@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Audio | Nihonhut]]></title>
+  <link href="http://sulvaat.github.com/blog/categories/audio/atom.xml" rel="self"/>
+  <link href="http://sulvaat.github.com/"/>
+  <updated>2012-03-13T23:57:36-04:00</updated>
+  <id>http://sulvaat.github.com/</id>
+  <author>
+    <name><![CDATA[sul]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Easily Switch To USB Audio Output in Arch]]></title>
+    <link href="http://sulvaat.github.com/blog/2012/03/13/easily-switch-audio-outputs-in-arch/"/>
+    <updated>2012-03-13T23:36:00-04:00</updated>
+    <id>http://sulvaat.github.com/blog/2012/03/13/easily-switch-audio-outputs-in-arch</id>
+    <content type="html"><![CDATA[<p>Lets face it, switching audio outputs is a pain on linux. I made a quick script that you can place in /bin to make life easier.</p>
+
+<p>You will need to get asoundconf out of the AUR first, once thats ready to go:</p>
+
+<p><code>
+$ asoundconf is-active
+$ asoundconf list
+</code>
+<code>
+sanae@MORIYA&gt; asoundconf list
+Names of available soundcards:
+Intel
+CODEC // This is my USB DAC
+</code></p>
+
+<p>This will print all the cards in your system. Remember them since you will make a script for each one now:</p>
+
+<p>```</p>
+
+<h1>!/bin/sh</h1>
+
+<p>asoundconf is-active
+asoundconf list
+asoundconf set-default-card Intel
+<code>
+</code></p>
+
+<h1>!/bin/sh</h1>
+
+<p>asoundconf is-active
+asoundconf list
+asoundconf set-default-card CODEC
+```
+Simple.</p>
+
+<p>Now, move them to /bin so all you need to do is type intel or codec (in this case) to switch.</p>
+
+<p>Enjoy.</p>
+]]></content>
+  </entry>
+  
+</feed>
