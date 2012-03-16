@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Nihonhut]]></title>
   <link href="http://sulvaat.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://sulvaat.github.com/"/>
-  <updated>2012-03-15T00:24:34-04:00</updated>
+  <updated>2012-03-16T13:27:25-04:00</updated>
   <id>http://sulvaat.github.com/</id>
   <author>
     <name><![CDATA[sul]]></name>
@@ -12,6 +12,74 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using dwm Continued]]></title>
+    <link href="http://sulvaat.github.com/blog/2012/03/16/useing-dwm-continued/"/>
+    <updated>2012-03-16T08:20:00-04:00</updated>
+    <id>http://sulvaat.github.com/blog/2012/03/16/useing-dwm-continued</id>
+    <content type="html"><![CDATA[<p>In my last guide, I quickly skimmed over the basics of getting dwm going in an arch linux machine. Now lets get some post-install configureation to get something that looks nice as well as works nice.</p>
+
+<h2>Urxvt</h2>
+
+
+<p>We told dwm to use dwm last time so lets get the stuff most users are looking for in a terminal - mainly transparency. Configuration for urxvt is done via the <code>.Xdefaults</code> file which it lookds for in <code>$HOME</code>.</p>
+
+<p>```
+URxvt*termName: rxvt</p>
+
+<h2>borderless and no scrollbar</h2>
+
+<p> URxvt<em>scrollBar_right: false
+ URxvt</em>scrollBar: false
+ URxvt*borderLess: false</p>
+
+<h2>teh transparency stuff</h2>
+
+<p> URxvt<em>inheritPixmap: true
+ URxvt</em>tintColor: white
+ URxvt*shading: 40</p>
+
+<h2>change default colors</h2>
+
+<p> URxvt<em>background: #000000
+ URxvt</em>foreground: #3300ff
+ URxvt<em>color0: #000000
+ URxvt</em>color1: #A80000
+ URxvt<em>color2: #00A800
+ URxvt</em>color3: #A85400
+ URxvt<em>color4: #0000A8
+ URxvt</em>color5: #A800A8
+ URxvt<em>color6: #00A8A8
+ URxvt</em>color7: #A8A8A8
+ URxvt<em>color8: #545054
+ URxvt</em>color9: #F85450
+ URxvt<em>color10: #50FC50
+ URxvt</em>color11: #F2FC50
+ URxvt<em>color12: #5054F8
+ URxvt</em>color13: #F854F8
+ URxvt<em>color14: #50FCF8
+ URxvt</em>color15: #F8FCF8
+```</p>
+
+<p>My <code>.Xdefaults</code> is a good start but by far not all the things urxvt can do.</p>
+
+<h2>Getting around dwm</h2>
+
+
+<p>A quick list of the most used hotkeys in dwm</p>
+
+<ul>
+<li>alt+q - Bails out of dwm and brings you back to the command prompt.</li>
+<li>alt+shift+c - Simply closes the current window.</li>
+<li>alt+1-5 - Switches your desktop, holding shift while doing this moves the current window to that desktop.</li>
+<li>alt+shift+enter - Spawns a terminal window.</li>
+</ul>
+
+
+<p>Thats all for now, going off to D.C later to the Japan Association to meet a friend!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Speed Up Your Life With dwm]]></title>

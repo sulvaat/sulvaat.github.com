@@ -9,7 +9,7 @@
   <meta name="author" content="sul">
 
   
-  <meta name="description" content="Good X window managers make life good. Unless you&#8217;re into bloated desktop enviroments a simple X window manager is plenty sufficiant. Here is &hellip;">
+  <meta name="description" content="Mike is making a fantastic &#8220;Let&#8217;s play&#8221; of Bioware&#8217;s latest hit Mass Effect 3. Check it out and leave a comment! ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -64,6 +64,167 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/16/mass-effect-3-lets-play/">Mass Effect 3 Let&#8217;s Play</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-16T12:48:00-04:00" pubdate data-updated="true">Mar 16<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Mike is making a fantastic &#8220;Let&#8217;s play&#8221; of Bioware&#8217;s latest hit Mass Effect 3. Check it out and leave a comment!</p>
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/95jc6Mgdmpc" frameborder="0" allowfullscreen></iframe>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/16/useing-dwm-continued/">Using Dwm Continued</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-16T08:20:00-04:00" pubdate data-updated="true">Mar 16<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In my last guide, I quickly skimmed over the basics of getting dwm going in an arch linux machine. Now lets get some post-install configureation to get something that looks nice as well as works nice.</p>
+
+<h2>Urxvt</h2>
+
+
+<p>We told dwm to use dwm last time so lets get the stuff most users are looking for in a terminal - mainly transparency. Configuration for urxvt is done via the <code>.Xdefaults</code> file which it lookds for in <code>$HOME</code>.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>URxvt*termName: rxvt
+</span><span class='line'>
+</span><span class='line'>## borderless and no scrollbar
+</span><span class='line'> URxvt*scrollBar_right: false
+</span><span class='line'> URxvt*scrollBar: false
+</span><span class='line'> URxvt*borderLess: false
+</span><span class='line'>
+</span><span class='line'>## teh transparency stuff
+</span><span class='line'> URxvt*inheritPixmap: true
+</span><span class='line'> URxvt*tintColor: white
+</span><span class='line'> URxvt*shading: 40
+</span><span class='line'>
+</span><span class='line'>## change default colors
+</span><span class='line'> URxvt*background: #000000
+</span><span class='line'> URxvt*foreground: #3300ff
+</span><span class='line'> URxvt*color0: #000000
+</span><span class='line'> URxvt*color1: #A80000
+</span><span class='line'> URxvt*color2: #00A800
+</span><span class='line'> URxvt*color3: #A85400
+</span><span class='line'> URxvt*color4: #0000A8
+</span><span class='line'> URxvt*color5: #A800A8
+</span><span class='line'> URxvt*color6: #00A8A8
+</span><span class='line'> URxvt*color7: #A8A8A8
+</span><span class='line'> URxvt*color8: #545054
+</span><span class='line'> URxvt*color9: #F85450
+</span><span class='line'> URxvt*color10: #50FC50
+</span><span class='line'> URxvt*color11: #F2FC50
+</span><span class='line'> URxvt*color12: #5054F8
+</span><span class='line'> URxvt*color13: #F854F8
+</span><span class='line'> URxvt*color14: #50FCF8
+</span><span class='line'> URxvt*color15: #F8FCF8</span></code></pre></td></tr></table></div></figure>
+
+
+<p>My <code>.Xdefaults</code> is a good start but by far not all the things urxvt can do.</p>
+
+<h2>Getting around dwm</h2>
+
+
+<p>A quick list of the most used hotkeys in dwm</p>
+
+<ul>
+<li>alt+q - Bails out of dwm and brings you back to the command prompt.</li>
+<li>alt+shift+c - Simply closes the current window.</li>
+<li>alt+1-5 - Switches your desktop, holding shift while doing this moves the current window to that desktop.</li>
+<li>alt+shift+enter - Spawns a terminal window.</li>
+</ul>
+
+
+<p>Thats all for now, going off to D.C later to the Japan Association to meet a friend!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -363,6 +524,14 @@ daunting because there is no default GUI with a pretty setup application. As a f
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/03/16/mass-effect-3-lets-play/">Mass Effect 3 Let&#8217;s Play</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/03/16/useing-dwm-continued/">Using dwm Continued</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/03/14/speed-up-your-life-with-dwm/">Speed Up Your Life With dwm</a>

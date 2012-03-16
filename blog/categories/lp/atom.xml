@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: LP | Nihonhut]]></title>
+  <link href="http://sulvaat.github.com/blog/categories/lp/atom.xml" rel="self"/>
+  <link href="http://sulvaat.github.com/"/>
+  <updated>2012-03-16T13:27:25-04:00</updated>
+  <id>http://sulvaat.github.com/</id>
+  <author>
+    <name><![CDATA[sul]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mass Effect 3 Let's Play]]></title>
+    <link href="http://sulvaat.github.com/blog/2012/03/16/mass-effect-3-lets-play/"/>
+    <updated>2012-03-16T12:48:00-04:00</updated>
+    <id>http://sulvaat.github.com/blog/2012/03/16/mass-effect-3-lets-play</id>
+    <content type="html"><![CDATA[<p>Mike is making a fantastic "Let's play" of Bioware's latest hit Mass Effect 3. Check it out and leave a comment!</p>
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/95jc6Mgdmpc" frameborder="0" allowfullscreen></iframe>
+
+]]></content>
+  </entry>
+  
+</feed>
